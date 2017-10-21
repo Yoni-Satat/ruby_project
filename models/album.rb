@@ -11,12 +11,19 @@ class Album
     @artist_id = options['artist_id'].to_i
   end
 
-  def save
+  def save()
     sql = "INSERT INTO albums(title, quantity, artist_id)
            VALUES($1, $2, $3)
            RETURNING id"
     values = [@title, @quantity, @artist_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
+  end
+
+  def self.all()
+    sql = "SELECT * FROM albums"
+    values = []
+    results = SqlRunner.run(sql, values)
+    return results.map {|album| Album.new(album)}
   end
 end
