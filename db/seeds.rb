@@ -1,4 +1,5 @@
 require_relative('../models/album.rb')
+require_relative('../models/artist.rb')
 require('pry')
 
 
@@ -27,3 +28,6 @@ album1 = Album.new({
     })
 
     album2.save()
+
+    binding.pry
+    nil
