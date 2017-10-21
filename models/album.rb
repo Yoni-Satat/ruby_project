@@ -26,4 +26,12 @@ class Album
     results = SqlRunner.run(sql, values)
     return results.map {|album| Album.new(album)}
   end
+
+  def stock_level()
+    sql = "SELECT title, quantity FROM albums WHERE artist_id = $1"
+    values = [@artist_id]
+    results = SqlRunner.run(sql, values)
+    return results.map {|stock| Album.new(stock)}
+
+  end
 end
