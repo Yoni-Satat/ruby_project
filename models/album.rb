@@ -2,7 +2,7 @@ require_relative('../db/sql_runner.rb')
 
 class Album
 
-  attr_reader( :id, :title, :quantity)
+  attr_reader( :id, :title, :quantity, :artist_id)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -28,10 +28,22 @@ class Album
   end
 
   def stock_level()
-    sql = "SELECT title, quantity FROM albums WHERE artist_id = $1"
-    values = [@artist_id]
-    results = SqlRunner.run(sql, values)
-    return results.map {|stock| Album.new(stock)}
+    sql = "SELECT albums.* FROM albums WHERE quantity = $1"
+    values = [@quantity]
+    results = SqlRunner.run(sql, values).first
+    quantity = results["quantity"].to_i
+    if quantity <= 7
+      return "LOW"
+    elsif quantity >= 8 && quantity <= 15
+      return "MEDIUM"
+    elsif quantity > 16
+      return "HIGH"
+    end
+
+      # puts "The hash key is #{key} and the value is #{value}."
 
   end
+
+
+
 end
