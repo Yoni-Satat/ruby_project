@@ -15,19 +15,27 @@ artist2 = Artist.new({
 
 album1 = Album.new({
   'title' => 'Dark Side of The Moon',
-  'quantity' => 10,
+  'quantity' => 5,
   'artist_id' => artist1.id
   })
 
-  album1.save()
+album1.save()
 
-  album2 = Album.new({
-    'title' => 'Actually',
-    'quantity' => 10,
-    'artist_id' => artist2.id
-    })
+album2 = Album.new({
+  'title' => 'Actually',
+  'quantity' => 10,
+  'artist_id' => artist2.id
+  })
 
-    album2.save()
+  album2.save()
+
+album3 = Album.new({
+  'title' => 'Wish You Were Here',
+  'quantity' => 20,
+  'artist_id' => artist1.id
+  })
+
+  album3.save()
 
     binding.pry
     nil
