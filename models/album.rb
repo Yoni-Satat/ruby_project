@@ -34,7 +34,7 @@ class Album
     # quantity = results["quantity"].to_i
     if @quantity <= 7
       return "LOW"
-    elsif @quantity >= 8 && quantity <= 15
+    elsif @quantity >= 8 && @quantity <= 15
       return "MEDIUM"
     elsif @quantity > 16
       return "HIGH"
