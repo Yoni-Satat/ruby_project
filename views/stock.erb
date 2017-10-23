@@ -1,9 +1,9 @@
 <table>
   <thead>
     <tr>
-      <th>TITLE</th>
-      <th>QUANTITY</th>
-      <th>ARTIST ID</th>
+      <th>Title</th>
+      <th>Quantity</th>
+      <th>Artist Name</th>
     </tr>
   </thead>
   <% for album in @albums %>
@@ -11,6 +11,6 @@
     <tr>
       <td><%= album.title %></td>
       <td><%= album.stock_level %></td>
-      <td><%= album.artist_id %></td>
+      <td><%= Artist.find(album.artist_id).name %></td>
     </tr>
 <% end %>
