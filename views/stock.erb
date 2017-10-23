@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+      <th>TITLE</th>
+      <th>QUANTITY</th>
+      <th>ARTIST ID</th>
+    </tr>
+  </thead>
+  <% for album in @albums %>
+  <tbody>
+    <tr>
+      <td><%= album.title %></td>
+      <td><%= album.stock_level %></td>
+      <td><%= album.artist_id %></td>
+    </tr>
+<% end %>
