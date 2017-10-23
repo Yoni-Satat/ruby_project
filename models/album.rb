@@ -39,9 +39,6 @@ class Album
     elsif quantity > 16
       return "HIGH"
     end
-
-      # puts "The hash key is #{key} and the value is #{value}."
-
   end
 
 
