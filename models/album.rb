@@ -28,15 +28,15 @@ class Album
   end
 
   def stock_level()
-    sql = "SELECT albums.* FROM albums WHERE quantity = $1"
-    values = [@quantity]
-    results = SqlRunner.run(sql, values).first
-    quantity = results["quantity"].to_i
-    if quantity <= 7
+    # sql = "SELECT albums.* FROM albums WHERE quantity = $1"
+    # values = [@quantity]
+    # results = SqlRunner.run(sql, values).first
+    # quantity = results["quantity"].to_i
+    if @quantity <= 7
       return "LOW"
-    elsif quantity >= 8 && quantity <= 15
+    elsif @quantity >= 8 && quantity <= 15
       return "MEDIUM"
-    elsif quantity > 16
+    elsif @quantity > 16
       return "HIGH"
     end
   end
