@@ -1,0 +1,19 @@
+<h1>BLAH BLAH</h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>TITLE</th>
+      <th>QUANTITY</th>
+      <th>ARTIST ID</th>
+    </tr>
+  </thead>
+  <% for album in @albums %>
+  <tbody>
+    <tr>
+      <td><%= album.title %></td>
+      <td><%= album.quantity %></td>
+      <td><%= album.artist_id %></td>
+    </tr>
+<% end %>
