@@ -38,4 +38,10 @@ class Genre
     values = [id]
     SqlRunner.run(sql, values)
   end
+
+  def update()
+    sql = "UPDATE genres SET(type) = ($1) WHERE id = $2"
+    values = [@type, @id]
+    SqlRunner.run(sql, values)
+  end
 end
