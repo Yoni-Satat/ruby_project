@@ -18,5 +18,15 @@
     </select>
   </div>
 
+  <div class="field">
+    <label for="genre-id">Select an Genre: </label>
+    <select name="genre_id" id="genre-id">
+      <% for genre in @genres %>
+      <option value="<%= genre.id %>"><%=genre.type%></option>
+      <% end %>
+    </select>
+  </div>
+
+
   <button type="submit">Create New Album</button>
 </form>

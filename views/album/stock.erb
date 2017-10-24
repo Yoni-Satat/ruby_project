@@ -4,6 +4,7 @@
       <th>Title</th>
       <th>Quantity</th>
       <th>Artist Name</th>
+      <th>Genre</th>
     </tr>
   </thead>
   <% for album in @albums %>
@@ -12,11 +13,13 @@
       <td><%= album.title %></td>
       <td><%= album.stock_level %></td>
       <td><%= Artist.find(album.artist_id).name %></td>
+      <td><%= Genre.find(album.genre_id).type %></td>
       <td>
         <form method="post" action="/album/<%= album.id %>/delete">
           <input type="submit" value="Delete" />
         </form>
       </td>
+
       <td>
         <a href="/album/<%= album.id %>/update">Update</a>
       </td>

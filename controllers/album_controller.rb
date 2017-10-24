@@ -1,5 +1,6 @@
 require_relative('../models/album.rb')
 require_relative('../models/artist.rb')
+require_relative('../models/genre.rb')
 
 
 
@@ -10,6 +11,7 @@ end
 
 get '/album/new' do
   @artists = Artist.all()
+  @genres = Genre.all()
   erb :"album/create_album"
 end
 
