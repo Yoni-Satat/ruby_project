@@ -24,4 +24,12 @@ class Genre
     results = SqlRunner.run(sql, values)
     return results.map {|genre| Genre.new(genre)}
   end
+
+  def self.find(id)
+    sql = "SELECT * FROM genres WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    genre = results.map {|genre| Genre.new(genre)}
+    return genre.first
+  end
 end
