@@ -32,4 +32,10 @@ class Genre
     genre = results.map {|genre| Genre.new(genre)}
     return genre.first
   end
+
+  def self.delete(id)
+    sql = "DELETE FROM genres WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
 end
