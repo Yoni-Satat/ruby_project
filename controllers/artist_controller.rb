@@ -5,15 +5,20 @@ require_relative('../models/artist.rb')
 
 get '/artist' do
   @artist = Artist.all()
-  erb :stock
+  erb(:"artist/index")
 end
 
 get '/artist/new' do
-  erb :create_artist
+  erb :"artist/create_artist"
 end
 
 post '/artist' do
   artist = Artist.new(params)
   artist.save()
-  redirect to ('/')
+  redirect to ('/artist')
+end
+
+post '/artist/:id/delete' do
+  Artist.delete(params["id"])
+  redirect to ('/artist')
 end
