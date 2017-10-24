@@ -22,3 +22,14 @@ post '/artist/:id/delete' do
   Artist.delete(params["id"])
   redirect to ('/artist')
 end
+
+get '/artist/:id/update' do
+  @artist = Artist.find(params["id"])
+  erb :"artist/update_artist"
+end
+
+post '/artist/:id' do
+  @artist = Artist.new(params)
+  @artist.update
+  redirect to ('/album')
+end
