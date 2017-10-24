@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>Artist Name</th>
+    </tr>
+  </thead>
+  <% for artist in @artist %>
+  <tbody>
+    <tr>
+      <td><%= artist.name %></td>
+    </tr>
+    <td>
+      <form method="post" action="/artist/<%= artist.id %>/delete">
+        <input type="submit" value="Delete" />
+      </form>
+    </td>
+    <% end %>
+  </tbody>
+  </table>

@@ -12,5 +12,11 @@
       <td><%= album.title %></td>
       <td><%= album.stock_level %></td>
       <td><%= Artist.find(album.artist_id).name %></td>
+      <td>
+        <form method="post" action="/album/<%= album.id %>/delete">
+          <input type="submit" value="Delete" />
+        </form>
+      </td>
     </tr>
 <% end %>
+</table>
