@@ -1,5 +1,6 @@
 require_relative('../models/album.rb')
 require_relative('../models/artist.rb')
+require_relative('../models/genre.rb')
 require('pry')
 
 Album.delete_all()
@@ -38,6 +39,9 @@ album3 = Album.new({
   })
 
   album3.save()
+
+  genre1 = Genre.new({'type' => 'Pop'})
+  genre1.save()
 
     binding.pry
     nil
