@@ -45,11 +45,11 @@ class Album
     # results = SqlRunner.run(sql, values).first
     # quantity = results["quantity"].to_i
     if @quantity <= 7
-      return "LOW"
+      return "Low"
     elsif @quantity >= 8 && @quantity <= 15
-      return "MEDIUM"
+      return "Medium"
     elsif @quantity > 16
-      return "HIGH"
+      return "High"
     end
   end
 

@@ -2,21 +2,23 @@
   <thead>
     <tr>
       <th>Artist Name</th>
+      <th>Update Artist</th>
+      <th>Delete Artist</th>
     </tr>
   </thead>
-  <% for artist in @artist %>
   <tbody>
+    <% for artist in @artist %>
     <tr>
       <td><%= artist.name %></td>
+      <td>
+        <a href="/artist/<%= artist.id %>/update"><img src="images/rotate.png"</a>
+      </td>
+      <td>
+        <form method="post" action="/artist/<%= artist.id %>/delete">
+          <input type="image" src="images/recycle-bin.png" />
+        </form>
+      </td>
     </tr>
-    <td>
-      <form method="post" action="/artist/<%= artist.id %>/delete">
-        <input type="submit" value="Delete" />
-      </form>
-    </td>
-    <td>
-      <a href="/artist/<%= artist.id %>/update">Update</a>
-    </td>
     <% end %>
   </tbody>
   </table>

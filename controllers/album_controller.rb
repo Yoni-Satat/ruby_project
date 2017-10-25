@@ -18,7 +18,7 @@ end
 post '/album' do
   album = Album.new(params)
   album.save()
-  redirect to ('/')
+  redirect to ('/album')
 end
 
 post '/album/:id/delete' do

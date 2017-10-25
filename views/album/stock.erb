@@ -8,6 +8,8 @@
       <th>Sell Price</th>
       <th>Buy Price</th>
       <th>Markup %</th>
+      <th>Delete</th>
+      <th>Update</th>
     </tr>
   </thead>
   <% for album in @albums %>
@@ -22,12 +24,12 @@
       <td><%= album.markup %></td>
       <td>
         <form method="post" action="/album/<%= album.id %>/delete">
-          <input type="submit" value="Delete" />
+          <input type="image" src="images/recycle-bin.png" />
         </form>
       </td>
 
       <td>
-        <a href="/album/<%= album.id %>/update">Update</a>
+        <a href="/album/<%= album.id %>/update"><img src="images/rotate.png"</a>
       </td>
     </tr>
 <% end %>
