@@ -21,7 +21,9 @@ album1 = Album.new({
   'title' => 'Dark Side of The Moon',
   'quantity' => 5,
   'artist_id' => artist1.id,
-  'genre_id' => genre1.id
+  'genre_id' => genre1.id,
+  'sell_price' => 10,
+  'buy_price' => 2
    })
 
 album1.save()
@@ -30,7 +32,9 @@ album2 = Album.new({
   'title' => 'Actually',
   'quantity' => 10,
   'artist_id' => artist2.id,
-  'genre_id' => genre1.id
+  'genre_id' => genre1.id,
+  'sell_price' => 8,
+  'buy_price' => 2
    })
 
   album2.save()
@@ -39,7 +43,9 @@ album3 = Album.new({
   'title' => 'Wish You Were Here',
   'quantity' => 20,
   'artist_id' => artist1.id,
-  'genre_id' => genre1.id
+  'genre_id' => genre1.id,
+  'sell_price' => 10,
+  'buy_price' => 2
    })
 
   album3.save()
