@@ -34,10 +34,20 @@ class Artist
     return artist.first
   end
 
-  def self.delete(id)
-    sql = "DELETE FROM artists WHERE id = $1"
+  def self.albums(id)
+    sql = "SELECT * FROM albums WHERE artist_id = $1"
     values = [id]
-    SqlRunner.run(sql, values)
+    SqlRunner.run(sql, values).map{|album| Album.new(album)}
+  end
+
+  def self.delete(id)
+    if self.albums(id).length > 0
+      return false
+    end
+      sql = "DELETE FROM artists WHERE id = $1"
+      values = [id]
+      SqlRunner.run(sql, values)
+      return true
   end
 
   def update()
