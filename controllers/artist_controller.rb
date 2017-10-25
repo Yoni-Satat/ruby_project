@@ -20,8 +20,11 @@ post '/artist' do
 end
 
 post '/artist/:id/delete' do
-  Artist.delete(params["id"])
-  redirect to ('/artist')
+  if Artist.delete(params["id"]) == true
+    redirect to ('/artist')
+  else
+    erb :"artist/warning"
+  end
 end
 
 get '/artist/:id/update' do
