@@ -1,0 +1,26 @@
+<h1>Genres</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Genre</th>
+      <th>Update Genre</th>
+      <th>Delete Genre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for genre in @genres %>
+    <tr>
+      <td><%= genre.type %></td>
+      <td>
+        <a href="/genre/<%= genre.id %>/update"><img src="images/rotate.png"</a>
+      </td>
+      <td>
+        <form method="post" action="/genre/<%= genre.id %>/delete">
+          <input type="image" src="/images/recycle-bin.png" />
+        </form>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+  </table>

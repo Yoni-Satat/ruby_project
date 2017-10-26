@@ -66,8 +66,8 @@ class Album
     end
 
     def update()
-      sql = "UPDATE albums SET(title, quantity, sell_price, buy_price, genre_id) = ($1, $2, $3, $4, $5) WHERE id = $6"
-      values = [@title, @quantity, @sell_price, @buy_price, @genre_id, @id]
+      sql = "UPDATE albums SET(title, quantity, sell_price, buy_price, genre_id, artist_id) = ($1, $2, $3, $4, $5, $6) WHERE id = $7"
+      values = [@title, @quantity, @sell_price, @buy_price, @genre_id, @artist_id, @id]
       SqlRunner.run(sql, values)
     end
 

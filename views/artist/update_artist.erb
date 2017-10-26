@@ -1,7 +1,14 @@
+<h1>Update Artist</h1>
+
 <form action="/artist/<%= @artist.id %>" method="post">
   <div class="field">
     <label for="name">Name: </label>
-    <input type="text" name="name" id="name"/>
+    <input type="text" name="name" value="<%= @artist.name %>" id="name"/>
   </div>
-  <input type="image" src="/images/recycle-bin.png" />
+
+  <div class="btn-icon">
+    <label for="update-artist">Update Artist</label>
+    <input type="image" src="/images/rotate.png" id="update-artist" />
+  </div>
+
 </form>

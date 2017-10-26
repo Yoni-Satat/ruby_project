@@ -35,5 +35,5 @@ end
 post '/artist/:id' do
   @artist = Artist.new(params)
   @artist.update
-  redirect to ('/album')
+  redirect to ('/artist')
 end

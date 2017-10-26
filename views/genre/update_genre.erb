@@ -1,0 +1,14 @@
+<h1>Update Genre</h1>
+
+<form action="/genre/<%= @genres.id %>" method="post">
+  <div class="field">
+    <label for="name">Type: </label>
+    <input type="text" name="type" value="<%= @genres.type %>" id="name"/>
+  </div>
+
+  <div class="btn-icon">
+    <label for="update-genre">Update Genre</label>
+    <input type="image" src="/images/rotate.png" id="update-genre" />
+  </div>
+
+</form>
