@@ -2,20 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css?yoni=om">
     <title>Keith Records Store | Welcome</title>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/album">Stock Level</a></li>
-        <li><a href="/album/new">New Album</a></li>
-        <li><a href="/artist/new">New Artist</a></li>
-        <li><a href="/artist">Artists</a></li>
-        <li><a href="/genre/new">New Genre</a></li>
-      </ul>
-    </nav>
+    <header>
+      <div class="container">
+        <div class="brand">
+          <a href="/"><img src="/images/record.png"></a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/album">Stock Level</a></li>
+            <li><a href="/album/new">New Album</a></li>
+            <li><a href="/artist/new">New Artist</a></li>
+            <li><a href="/artist">Artists</a></li>
+            <li><a href="/genre/new">New Genre</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
     <div class="main">
       <%= yield %>
     </div>

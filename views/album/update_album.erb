@@ -1,31 +1,34 @@
-<form action="/album/<%= @albums.id %>" method="post">
-  <div class="field">
-    <label for="title">Title: </label>
-    <input type="text" name="title" id="title" value="<%= @albums.title %>"/>
-  </div>
+<div class="form">
+  <form action="/album/<%= @albums.id %>" method="post">
+    <div class="field">
+      <div class="label"><label for="title">Title: </label></div>
+      <div class="input"><input type="text" name="title" id="title" value="<%= @albums.title %>"/></div>
+    </div>
 
-  <div class="field">
-    <label for="quantity">Quantity: </label>
-    <input type="text" name="quantity" id="quantity" value="<%= @albums.quantity %>"/>
-  </div>
+    <div class="field">
+      <div class="label"><label for="quantity">Quantity: </label></div>
+      <div class="input"><input type="text" name="quantity" id="quantity" value="<%= @albums.quantity %>"/></div>
+    </div>
 
-  <div class="field">
-    <label for="buy_price">Buy Price: </label>
-    <input type="text" name="buy_price" id="buy_price" value="<%= @albums.buy_price %>"/>
-  </div>
+    <div class="field">
+      <div class="label"><label for="buy_price">Buy Price: </label></div>
+      <div class="input"><input type="text" name="buy_price" id="buy_price" value="<%= @albums.buy_price %>"/></div>
+    </div>
 
-  <div class="field">
-    <label for="sell_price">Sell Price: </label>
-    <input type="text" name="sell_price" id="sell_price" value="<%= @albums.sell_price %>"/>
-  </div>
+    <div class="field">
+      <div class="label"><label for="sell_price">Sell Price: </label></div>
+      <div class="input"><input type="text" name="sell_price" id="sell_price" value="<%= @albums.sell_price %>"/></div>
+    </div>
 
-  <div class="field">
-    <label for="artist-id">Select an Artist: </label>
-    <select name="artist_id" id="artist-id">
-      <% for artist in @artists %>
-      <option value="<%= artist.id %>"><%=artist.name%></option>
-      <% end %>
-    </select>
-  </div>
-  <input type="image" src="/images/recycle-bin.png" />
-</form>
+    <div class="field">
+      <div class="label"><label for="artist-id">Select an Artist: </label></div>
+      <div class="input"><select name="artist_id" id="artist-id">
+        <% for artist in @artists %>
+        <option value="<%= artist.id %>"><%=artist.name%></option>
+        <% end %>
+      </select></div>
+    </div>
+      <label for="">hhhh</label>
+      <input class="btn-icon" type="image" src="/images/rotate.png" />
+  </form>
+</div>

@@ -1,3 +1,4 @@
+<h1>Stock Level</h1>
 <table>
   <thead>
     <tr>
@@ -15,12 +16,13 @@
   <% for album in @albums %>
   <tbody>
     <tr>
+      <!-- <td><img src="http://www.metalsucks.net/wp-content/uploads/2014/02/Machine-Head-Killers-Kings-10-Inch.jpg" alt="Cover of <%= album.title %>"></td> -->
       <td><%= album.title %></td>
       <td><%= album.stock_level %></td>
       <td><%= Artist.find(album.artist_id).name %></td>
       <td><%= Genre.find(album.genre_id).type %></td>
-      <td><%= album.sell_price %></td>
-      <td><%= album.buy_price %></td>
+      <td>&pound;<%= album.sell_price %></td>
+      <td>&pound;<%= album.buy_price %></td>
       <td><%= album.markup %></td>
       <td>
         <form method="post" action="/album/<%= album.id %>/delete">
