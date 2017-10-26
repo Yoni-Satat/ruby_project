@@ -1,14 +1,15 @@
 <h1>Add New Artist</h1>
+<div class="form">
+  <form action="/artist" method="post">
+    <div class="field">
+      <label for="name">Name: </label>
+      <input type="text" name="name" id="name"/>
+    </div>
 
-<form action="/artist" method="post">
-  <div class="field">
-    <label for="name">Name: </label>
-    <input type="text" name="name" id="name"/>
-  </div>
+    <div class="btn-icon">
+        <label for="bttn-add">Add Artist</label>
+        <input type="image" src="/images/plus-black-symbol.png" id="bttn-add"/>
+    </div>
 
-  <div class="btn-icon">
-      <label for="bttn-add">Add Artist</label>
-      <input type="image" src="/images/plus-black-symbol.png" id="bttn-add"/>
-  </div>
-
-</form>
+  </form>
+</div>

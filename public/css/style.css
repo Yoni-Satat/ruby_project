@@ -1,13 +1,15 @@
+/* GLOBAL SETTINGS */
+
 body{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 15px;
 	line-height: 1.5;
 	padding: 0;
 	margin: 0;
-  color: #0e1eff;
+  color: #000ba0;
+	background-color: #eaf0d4;
 }
 
-/* GLOBAL SETTINGS */
 .container{
 	width: 80%; /* set all containers to be 80% wide */
 	margin: auto; /* move all div containers to center */
@@ -19,9 +21,13 @@ ul{
 	padding: 0;
 }
 
+h1{
+	font-size: 50px;
+}
+
 /* HEADER */
 header{
-	background-color: #0e1eff;
+	background-color: #000ba0;
 	color: #ffffff; /* set font color to white */
 	padding-top: 30px; /* to give some space between the <h1> and the top of the window */
 	min-height: 50px;
@@ -66,14 +72,20 @@ header a:hover{
 
 /*MAIN*/
 .main{
-  padding-top: 80px;
+  padding-top: 30px;
   width: 70%;
   margin: 0 auto;
   text-align: center;
 }
+.home-page img{
+	border-radius: 15%;
+  border: 5px dashed;
+	padding: 2px;
+	background-color: #fff;
+}
 .gap{
-  height: 300px;
-  background-color: #fff;
+  height: 200px;
+  background-color: #eaf0d4;
 }
 
 /*TABLES*/
@@ -84,6 +96,7 @@ table, th, td{
 table{
   width: 100%;
   border-collapse: collapse;
+	background-color: #fff;
 }
 
 td{
@@ -105,6 +118,9 @@ th{
   width: 70%;
   margin: auto;
   padding: 20px;
+	border: 1px solid;
+  border-radius: 10px;
+  background-color: #fff;
 }
 
 .field{
@@ -129,7 +145,7 @@ label {
   width: 60%;
 }
 
-.input input{
+.input input, .input select{
   width: 100%;
   height: 20px;
 }
@@ -137,6 +153,10 @@ label {
 select{
   width: 100%;
   height: 25px;
+	border: 1px solid #000ba0;
+}
+input{
+	border: 1px solid #000ba0;
 }
 
 .btn{
@@ -152,8 +172,8 @@ button{
 
 .btn-icon	{
 	margin: 0 auto;
-    width: 130px;
-    padding: 20px 0 0 0;
+  width: 130px;
+  padding: 20px 0 0 0;
 }
 .btn-icon label {
 	font-size: 20px;
