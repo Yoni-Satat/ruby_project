@@ -22,7 +22,7 @@
     </div>
 
     <div class="field">
-      <div class="label"><label for="genre-id">Select an Genre: </label></div>
+      <div class="label"><label for="genre-id">Select Genre: </label></div>
       <div class="input"><select name="genre_id" id="genre-id">
         <% for genre in @genres %>
         <option value="<%= genre.id %>"><%=genre.type%></option>
@@ -39,7 +39,11 @@
       <div class="label"><label for="buy_price">Buy Price: </label></div>
       <div class="input"><input type="text" name="buy_price" id="buy_price"/></div>
     </div>
-    <label for="">Add Album</label>
-    <input type="image" src="/images/plus-black-symbol.png" />
+
+    <div class="btn-icon">
+      <label for="add-album">Add Album</label>
+      <input type="image" src="/images/plus-black-symbol.png" id="add-album"/>
+    </div>
+
   </form>
 </div>
