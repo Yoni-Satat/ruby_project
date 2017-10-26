@@ -18,8 +18,12 @@ post '/genre' do
 end
 
 post '/genre/:id/delete' do
-  Genre.delete(params["id"])
-  redirect to ('/genre')
+  if Genre.delete(params["id"]) == true
+    Genre.delete(params["id"])
+    redirect to ('/genre')
+  else
+    erb :"genre/warning"
+  end
 end
 
 get '/genre/:id/update' do

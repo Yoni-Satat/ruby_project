@@ -33,10 +33,20 @@ class Genre
     return genre.first
   end
 
+  def self.albums(id)
+    sql = "SELECT * FROM albums WHERE genre_id = $1"
+    values = [id]
+    SqlRunner.run(sql, values).map{|album| Album.new(album)}
+  end
+
   def self.delete(id)
+    if self.albums(id).length > 0
+      return false
+    end
     sql = "DELETE FROM genres WHERE id = $1"
     values = [id]
     SqlRunner.run(sql, values)
+    return true
   end
 
   def update()
