@@ -3,7 +3,7 @@ require_relative('../db/sql_runner.rb')
 class Album
 
   attr_reader( :id)
-  attr_accessor( :title, :quantity, :artist_id, :genre_id, :sell_price, :buy_price)
+  attr_accessor( :title, :quantity, :artist_id, :genre_id, :sell_price, :buy_price, :image)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -13,13 +13,14 @@ class Album
     @genre_id = options['genre_id'].to_i
     @sell_price = options['sell_price'].to_f
     @buy_price = options['buy_price'].to_f
+    @image = options['image']
   end
 
   def save()
-    sql = "INSERT INTO albums(title, quantity, artist_id, genre_id, sell_price, buy_price)
-           VALUES($1, $2, $3, $4, $5, $6)
+    sql = "INSERT INTO albums(title, quantity, artist_id, genre_id, sell_price, buy_price, image)
+           VALUES($1, $2, $3, $4, $5, $6, $7)
            RETURNING id"
-    values = [@title, @quantity, @artist_id, @genre_id, @sell_price, @buy_price]
+    values = [@title, @quantity, @artist_id, @genre_id, @sell_price, @buy_price, @image]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -66,8 +67,8 @@ class Album
     end
 
     def update()
-      sql = "UPDATE albums SET(title, quantity, sell_price, buy_price, genre_id, artist_id) = ($1, $2, $3, $4, $5, $6) WHERE id = $7"
-      values = [@title, @quantity, @sell_price, @buy_price, @genre_id, @artist_id, @id]
+      sql = "UPDATE albums SET(title, quantity, sell_price, buy_price, genre_id, artist_id, image) = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $8"
+      values = [@title, @quantity, @sell_price, @buy_price, @genre_id, @artist_id, @image, @id]
       SqlRunner.run(sql, values)
     end
 

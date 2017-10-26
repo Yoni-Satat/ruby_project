@@ -19,5 +19,6 @@ CREATE TABLE albums(
   artist_id INT8 REFERENCES artists(id),
   genre_id INT8 REFERENCES genres(id),
   sell_price DECIMAL,
-  buy_price DECIMAL
+  buy_price DECIMAL,
+  image VARCHAR(255)
 );

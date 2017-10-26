@@ -1,6 +1,11 @@
 <div class="form">
   <form action="/album/<%= @albums.id %>" method="post">
     <div class="field">
+      <div class="label"><label for="album-cover">Album Cover: </label></div>
+      <div class="input"><input type="text" name="image" value="<%= @albums.image %>" id="album-cover"/></div>
+    </div>
+
+    <div class="field">
       <div class="label"><label for="title">Title: </label></div>
       <div class="input"><input type="text" name="title" id="title" value="<%= @albums.title %>"/></div>
     </div>

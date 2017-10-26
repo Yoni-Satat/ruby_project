@@ -2,6 +2,7 @@
 <table>
   <thead>
     <tr>
+      <th>Album Cover</th>
       <th>Title</th>
       <th>Quantity</th>
       <th>Artist Name</th>
@@ -16,7 +17,7 @@
   <% for album in @albums %>
   <tbody>
     <tr>
-      <!-- <td><img src="http://www.metalsucks.net/wp-content/uploads/2014/02/Machine-Head-Killers-Kings-10-Inch.jpg" alt="Cover of <%= album.title %>"></td> -->
+      <td class="album-cover"><img src="<%= album.image %>" alt="Cover of <%= album.title %>"></td>
       <td><%= album.title %></td>
       <td><%= album.stock_level %></td>
       <td><%= Artist.find(album.artist_id).name %></td>
