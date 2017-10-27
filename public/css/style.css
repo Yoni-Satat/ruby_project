@@ -79,7 +79,6 @@ header a:hover{
 }
 .home-page img{
 	border-radius: 15%;
-  border: 5px dashed;
 	padding: 2px;
 	background-color: #fff;
 }
@@ -91,6 +90,14 @@ header a:hover{
 /*TABLES*/
 table, th, td{
   border: 1px solid ;
+}
+
+.warning p{
+	font-size: 20px;
+	color: #fff;
+}
+.warning{
+	background-color: red;
 }
 
 table{
